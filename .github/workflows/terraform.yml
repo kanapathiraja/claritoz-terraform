@@ -21,6 +21,13 @@ jobs:
       - name: Terraform Init
         id: init
         run: terraform init -backend-config="access_key=AKIAVW72K7FCGH3LTZXD" -backend-config="secret_key=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"
+      
+      - name: "Setup - Build AWS Credentials"
+        run: |
+          mkdir -p ~/.aws
+          echo "[default]" > ~/.aws/credentials
+          echo "aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}" >> ~/.aws/credentials
+          echo "aws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> ~/.aws/credentials
 
       - name: Terraform Plan
         id: plan
