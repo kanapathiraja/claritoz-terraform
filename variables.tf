@@ -72,3 +72,11 @@ variable "strapi_port" {
   description = "Port exposed by the docker image to redirect traffic to"
   default     = 1337
 }
+
+/**************************************bucketname********************************/
+
+variable "bucketname" {
+  description = "s3-buvketname to be created"
+  type = "string"
+  default = "claritoz-poc-bucket"
+}
