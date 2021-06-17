@@ -77,6 +77,6 @@ variable "strapi_port" {
 
 variable "bucketname" {
   description = "s3-buvketname to be created"
-  type = "string"
+  type = string
   default = "claritoz-poc-bucket"
 }
